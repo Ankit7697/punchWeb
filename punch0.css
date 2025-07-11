@@ -444,7 +444,7 @@ fieldset{
 .Cred{
     box-shadow:2px 2px 10px red;
 }
-.Person1 {
+.Person2 {
     margin-top: 35px;
     display:inline-flex;
     /* background-color: #c87575; */
@@ -529,7 +529,7 @@ td{
     width: 45px;
     font-size: 15px;
     box-shadow: 3px 3px 10px black;
-    margin: 80px auto auto 90%;
+    margin: -35px auto auto 90%;
     border: none;
     border-radius: 2rem;
     padding: 2px;
