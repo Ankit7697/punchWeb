@@ -19,6 +19,7 @@ let din = document.querySelector("table tr td");
 
 let container = document.querySelector(".container");
 let person = document.querySelector(".Person1");
+let person2 = document.querySelector(".Person2");
 let List = document.querySelector(".new-page");
 let Back = document.querySelector(".back");
 
@@ -217,77 +218,324 @@ namein.addEventListener("keyup", () => {
 
 
 class MyDataClass {
-    static existingIds = new Set();
-    // Use a Set for efficient uniqueness checks
-
-    constructor(EmpCode, EmpName, Att_Date, Time_In, Time_Out, Total_time, OT_time) {
-        if (MyDataClass.existingIds.has(EmpCode)) {
-            throw new Error(`Employe Code"${EmpCode}" already exists.\nPlease provide a unique Employe Code.`);
-        };
-
-        this.EmpCode = EmpCode;
+    
+    constructor(EmpCode, EmpName, Att_Date) {
+        
+        this.EmpCode = EmpCode,
         this.EmpName = EmpName;
         this.Att_Date = Att_Date;
-        this.Time_In = Time_In;
-        this.Time_Out = Time_Out;
-        this.Total_time = Total_time;
-        this.OT_time = OT_time;
 
-        MyDataClass.existingIds.add(EmpCode);
+
+        // MyDataClass.existingIds.add(EmpCode);
         // Add the new ID to out tracking Set
-    };
 
-    static addP(EmpCode){
+        // console.log(MyDataClass.existingIds)
+    };    
+    // MyDataClass.store();
+    // EmpCode, EmpName, Att_Date, Time_In, Time_Out, Total_time, OT_time
+    
+};
+
+// function store(a, b, c){
+    
+//     localStorage.setItem("EmpName", JSON.stringify(b));
+//     localStorage.setItem("Att_Date", JSON.stringify(c));
+//     // localStorage.setItem("Time_In", JSON.stringify(d));
+//     // localStorage.setItem("Time_Out", JSON.stringify(f));
+//     // localStorage.setItem("Total_time", JSON.stringify(e));
+//     // localStorage.setItem("OT_time", JSON.stringify(g));
+// };
+
+    
+
+
+
+
+
+
+
+
+
+
+
+// --- Demonstrating uniqueness Check ---
+
+
+
+const existingIds = new Set();
+// Use a Set for efficient uniqueness checks"    
+const storeObjects = {};
+// Use a object for store data"
+
+
+
+let keyLength = localStorage.length;
+// for reload get data"
+
+const keyLen = localStorage.length;
+
+function getLocalData() {
+
+    function crDiv(stCd, stNm,) {
+        let div = document.createElement("div");
+        div.className = "Person1";
+        div.innerHTML = `<div class = "Person2">
+            <div class="code">${stCd}</div>
+            <div class="Name">${stNm}</div>
+            <table>
+                <tr>
+                    <th colspan="2">1</th>
+                    <th colspan="2">2</th>
+                    <th colspan="2">3</th>
+                    <th colspan="2">4</th>
+                    <th colspan="2">5</th>
+                    <th colspan="2">6</th>
+                    <th colspan="2">7</th>
+                    <th colspan="2">8</th>
+                    <th colspan="2">9</th>
+                    <th colspan="2">10</th>
+                    <th colspan="2">11</th>
+                    <th colspan="2">12</th>
+                    <th colspan="2">13</th>
+                    <th colspan="2">14</th>
+                    <th colspan="2">15</th>
+                    <th colspan="2">16</th>
+                    <th colspan="2">17</th>
+                    <th colspan="2">18</th>
+                    <th colspan="2">19</th>
+                    <th colspan="2">20</th>
+                    <th colspan="2">21</th>
+                    <th colspan="2">22</th>
+                    <th colspan="2">23</th>
+                    <th colspan="2">24</th>
+                    <th colspan="2">25</th>
+                    <th colspan="2">26</th>
+                    <th colspan="2">27</th>
+                    <th colspan="2">28</th>
+                    <th colspan="2">29</th>
+                    <th colspan="2">30</th>
+                    <th colspan="2">31</th>
+                </tr>
+                <tr>
+                    <td><p>insjnflsknflT</p></td>
+                    <td><p>outTaekjfhsfan</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                    <td><p>inT</p></td>
+                    <td><p>outT</p></td>
+                 </tr>
+                 <tr>
+                    <td colspan="2"><p>otTkjsaflj;kjksdkfa</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                    <td colspan="2"><p>otT</p></td>
+                 </tr>
+             </table>
+         </div>`;
+        return div;
+    };
+    
+    for (let i = keyLength; i >= 1; i--) {
+
+        let kL = keyLen-i;
+    
+        let nameOfkey = "key" + JSON.stringify(kL+1);
+        let dT = JSON.parse(localStorage.getItem(nameOfkey));
+        
+        let setCode = dT.EmpCode;
+        existingIds.add(setCode);
+        console.log(existingIds);
+    
+        let setName = dT.EmpName.toLowerCase().trim();
+        let setDate = dT.Att_Date;
+        console.log(setDate);
+        
+        const creatObj = {};
+        const cary = creatObj;
+                
+        cary[setCode] = setName;
+        console.log(creatObj);
+
+        storeObjects[JSON.stringify(cary)] = setDate;
+        console.log(storeObjects);
+
+
+        let callDiv = crDiv(setCode, setName);
+        console.log(callDiv);
+    	person.append(callDiv);
+        
+        console.log(i,dT);
+        keyLength--;
+    };
+    
+    
+};
+
+
+
+function delPerson(code,name) {
+    try {
+        if (existingIds.has(code)) {
+            
+            existingIds.delete(code);
+            existingNames.remove(name.toLowerCase().trim());
+            
+        } else {
+            throw new Error(`Code ${code} is not exist. \nPlease provide a another Code.`);
+        };
+    } catch (error) {
+        console.error(error.message);
+        alert(error.message);
+    };
+        
+};
+
+
+let vari = localStorage.length + 1;
+function object(func) {
+    try {
+        
+        const dateObj = {
+            Date : dateA.value,
+            timeIn : TinA.value,
+            timeOut : ToutA.value,
+            workTime : P2.textContent,
+            overTime : P3.textContent
+        };
+        
+        const objA = new MyDataClass(codein.value, namein.value, dateObj);
+    
+        myKey = "key" + JSON.stringify(vari);
+        localStorage.setItem(myKey, JSON.stringify(objA));
+        
+        Number(vari++);
+        
+        console.log("Created objA:", objA);
+        
+        return objA;
+        
+    } catch (error) {
+            console.error(error.message);
+            alert(error.message);
+    };
+    
+    // reloadData;
+    
+    function addPerson(code,name) {
         try {
-            if (MyDataClass.existingIds.has(EmpCode)) {
-                throw new Error(`Employe Code"${EmpCode}" already exists.\nPlease provide a unique Employe Code.`);
-            }else{
-                MyDataClass.existingIds.add(EmpCode);
+            if (existingIds.has(code)) {
+                throw new Error(`Code ${code} already exists. \nPlease provide a unique Code.`);
+            } else {                    
+                existingIds.add(code);
+                console.log(existingIds);
+                existingNames.push(name.toLowerCase().trim());
+                console.log(existingNames);
             };
         } catch (error) {
             console.error(error.message);
             alert(error.message);
         };
-    };
-
-    static del(EmpCode){
-        MyDataClass.existingIds.delete(EmpCode);
-    };
-    // Use a function for delete item of set
-};
-
-// --- Demonstrating uniqueness Check ---
-
-function Object() {
-    try {
-        const objA = new MyDataClass(codein.value, namein.value, dateA.value, TinA.value, ToutA.value, P2.textContent, P3.textContent);
         
-        console.log("Created objA:", objA);
-        return objA;
-        
-    } catch (error) {
-        console.error(error.message);
-        alert(error.message);
-        //Output: ID "ID_001" already exists. Please provide a unique ID.
     };
-    console.log("Existing IDs:", MyDataClass.existingIds);
-    //Output: Existing IDs: Set(2) {'ID_001', 'ID_002'}
 };
 
 try {
     document.onkeydown = function (e) {
-        console.log("Key code is: ", e.keyCode)
+        // console.log("Key code is: ", e.keyCode)
         if (e.keyCode == 13) {
             if (TinA.value != false && ToutA.value != false) {
                 dateA.classList.remove("Cred");
                 TinA.classList.remove("Cred");
                 ToutA.classList.remove("Cred");
                 P1.innerText = dateA.value;                
-        		calculateTimeDifference();
+                calculateTimeDifference();
                 if (codein.value != false && namein.value != false) {
                     if (dateA.value != false) {
-                        Object();
-
+                        object();
+                        getLocalData();
                         // obj_data = Object();
                         // console.log(obj_data);
 
@@ -321,11 +569,11 @@ try {
                 TinA.classList.remove("Cred");
                 ToutA.classList.remove("Cred");
                 P1.innerText = dateA.value;                
-        		calculateTimeDifference();
+                calculateTimeDifference();
                 if (codein.value != false && namein.value != false) {
                     if (dateA.value != false) {
-                        Object();
-
+                        object();
+                        getLocalData();
                         // obj_data = Object();
                         // console.log(obj_data);
 
@@ -349,31 +597,46 @@ try {
             };
         });
     };
-} catch (err){
-    console.log(err);
+    
+    addbtn.addEventListener("click", () => {
+        let userChange = confirm("Do you want Add Persons");
+        if (userChange) {
+            if (codein.value != false && namein.value != false) {
+                addPerson(codein.value,namein.value);
+            } else {
+                alert("Please fill Code and Name Sections");
+            };        
+        };   
+    });
+    
+    delbtn.addEventListener("click", () => {
+        let userChange = confirm("Do you want Delete Person");
+        if (userChange) {
+            if (codein.value != false && namein.value != false) {
+                delPerson(codein.value,namein.value);
+            } else {
+                alert("Please fill Code and Name Sections");
+            };        
+        };
+    });
+
+} catch (error){
+    console.error(error.message);
+    alert(error.message);
 };
 
-addbtn.addEventListener("click", () => {
-    let userChange = confirm("Do you want Rewrite Date");
-    if (userChange) {
-        if (TinA.value != false && ToutA.value != false && codein.value != false && namein.value != false && dateA.value != false) {
-            MyDataClass.addP(codein.value);
-        } else {
-            alert("Please fill All Sections");
-        };        
-    };   
-});
+window.onload = function(){
+    getLocalData();
+};
 
-delbtn.addEventListener("click", () => {
-    let userChange = confirm("Do you want Rewrite Date");
-    if (userChange) {
-        if (codein.value != false && namein.value != false) {
-            MyDataClass.del(codein.value);
-        } else {
-            alert("Please fill All Sections");
-        };        
-    };   
-});
+
+
+
+let geI = localStorage.getItem("EmpCode");
+
+if(geI){
+    code.textContent = JSON.parse(localStorage.getItem("EmpCode"));
+};
 
 // --- Method 2nd ---
 
@@ -415,6 +678,13 @@ delbtn.addEventListener("click", () => {
 // console.log("Result of dataObj3 creation attempt:", dataObj3); // Will be the same as dataObj1 if returning existing
 
 // console.log("\nAll objects in collection:");
+// myDataCollection.forEach((value, key) => {
+//   console.log(`ID: ${key}, Object:`, value);
+// });
+
+// // Verify if dataObj1 and dataObj3 are the same object reference
+// console.log("dataObj1 === dataObj3:", dataObj1 === dataObj3);
+// --Newcode--onsole.log("\nAll objects in collection:");
 // myDataCollection.forEach((value, key) => {
 //   console.log(`ID: ${key}, Object:`, value);
 // });
