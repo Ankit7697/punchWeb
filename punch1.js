@@ -1,6 +1,5 @@
 let codein = document.querySelector("#codein");
 let namein = document.querySelector("#namein");
-
 let dateA = document.querySelector(".idate");
 let TinA = document.querySelector(".Tin");
 let ToutA = document.querySelector(".Tout");
@@ -12,28 +11,22 @@ let P4 = document.querySelector(".p4");
 let P5 = document.querySelector(".p5");
 let spa = document.querySelector(".spa");
 let spa2 = document.querySelector(".spa2");
-
 let code = document.querySelector(".code");
 let Name = document.querySelector(".Name");
 let din = document.querySelector("table tr td");
-
 let container = document.querySelector(".container");
 let person = document.querySelector(".Person1");
 let person2 = document.querySelector(".Person2");
 let List = document.querySelector(".new-page");
 let Back = document.querySelector(".back");
-
 let addbtn = document.querySelector(".addbtn");
 let delbtn = document.querySelector(".delbtn");
-
 let mode = document.querySelector(".mode");
 let body1 = document.querySelector(".body1");
 let mdp = document.querySelector(".mdp");
 let md = document.querySelector(".md");
-
 let Np = document.querySelector(".nav2 p");
 let imp = document.querySelector(".imp");
-
 
 (function () {
     person.style.display = "none";
@@ -45,16 +38,12 @@ List.addEventListener("click", () => {
     person.style.display = "";
 });
 
-
 Back.addEventListener("click", () => {
     person.style.display = "none";
     container.style.display = "";
 });
 
-
-
 let bcmode = true;
-
 const chamode = () => {
     if (bcmode) {
         body1.style.backgroundColor = "#242e2f";
@@ -117,14 +106,11 @@ function calculateTimeDifference() {
     resultSpan.style.color = "red";
     return;
     }
-    
     // Convert time strings to Date objects for easier calculation
     // We use a dummy date (like 1970-01-01) as only the time part matters
     const date1 = new Date(`1970-01-01T${time1Value}:00Z`);
     const date2 = new Date(`1970-01-01T${time2Value}:00Z`);
     const Dtime = new Date(`1970-01-01T${DutyTime}:00Z`);
-
-
     // console.log(date2.getTime(),"d2");
     // console.log(date1.getTime(),"d1");
     
@@ -132,19 +118,16 @@ function calculateTimeDifference() {
     let diffMilliseconds = date2.getTime() - date1.getTime();
 
     // console.log(diffMilliseconds);
-    
     let T1 = Dtime.getTime();
     
     // console.log(T1);
-
     let T2 = diffMilliseconds - T1;
     
     // Handle cases where the second time is earlier than the first on the same day
     if (diffMilliseconds < 0) {
       // Assume the second time is on the next day
       diffMilliseconds += 24 * 60 * 60 * 1000; // Add milliseconds in a day
-    };
-
+    }
     // Handle cases where the second time is earlier than the first on the same day
     if (T2 < 0) {
         T2 = 0;
@@ -168,17 +151,13 @@ function calculateTimeDifference() {
 
     resultSpan.textContent = formattedResult;
     ParaOf_OT.textContent = x;
-}
-
-
-
+};
 let codelist = {
     A_001 : "Ankit",
     A_002 : "Pinku",
     A_003 : "Pinki",
     A_004 : "Rinki"
 };
-
 
 codein.addEventListener("keyup", () =>{
     if (namein.value == "") {
@@ -216,62 +195,28 @@ namein.addEventListener("keyup", () => {
     };
 });
 
-
 class MyDataClass {
-    
     constructor(EmpCode, EmpName, Att_Date) {
         
-        this.EmpCode = EmpCode,
+        this.EmpCode = EmpCode;
         this.EmpName = EmpName;
         this.Att_Date = Att_Date;
 
-
         // MyDataClass.existingIds.add(EmpCode);
         // Add the new ID to out tracking Set
-
         // console.log(MyDataClass.existingIds)
     };    
     // MyDataClass.store();
     // EmpCode, EmpName, Att_Date, Time_In, Time_Out, Total_time, OT_time
-    
 };
-
-// function store(a, b, c){
-    
-//     localStorage.setItem("EmpName", JSON.stringify(b));
-//     localStorage.setItem("Att_Date", JSON.stringify(c));
-//     // localStorage.setItem("Time_In", JSON.stringify(d));
-//     // localStorage.setItem("Time_Out", JSON.stringify(f));
-//     // localStorage.setItem("Total_time", JSON.stringify(e));
-//     // localStorage.setItem("OT_time", JSON.stringify(g));
-// };
-
-    
-
-
-
-
-
-
-
-
-
-
-
 // --- Demonstrating uniqueness Check ---
-
-
-
 const existingIds = new Set();
 // Use a Set for efficient uniqueness checks"    
 const storeObjects = {};
 // Use a object for store data"
 
-
-
 let keyLength = localStorage.length;
 // for reload get data"
-
 const keyLen = localStorage.length;
 
 function getLocalData() {
@@ -450,19 +395,13 @@ function getLocalData() {
         console.log(i,dT);
         keyLength--;
     };
-    
-    
 };
-
-
 
 function delPerson(code,name) {
     try {
         if (existingIds.has(code)) {
-            
             existingIds.delete(code);
             existingNames.remove(name.toLowerCase().trim());
-            
         } else {
             throw new Error(`Code ${code} is not exist. \nPlease provide a another Code.`);
         };
@@ -473,11 +412,9 @@ function delPerson(code,name) {
         
 };
 
-
 let vari = localStorage.length + 1;
 function object(func) {
     try {
-        
         const dateObj = {
             Date : dateA.value,
             timeIn : TinA.value,
@@ -501,8 +438,6 @@ function object(func) {
             console.error(error.message);
             alert(error.message);
     };
-    
-    // reloadData;
     
     function addPerson(code,name) {
         try {
@@ -629,66 +564,8 @@ window.onload = function(){
     getLocalData();
 };
 
-
-
-
 let geI = localStorage.getItem("EmpCode");
 
 if(geI){
     code.textContent = JSON.parse(localStorage.getItem("EmpCode"));
 };
-
-// --- Method 2nd ---
-
-// class MyDataClass {
-//   constructor(id, name, value1, value2, value3) {
-//     this.id = id;
-//     this.name = name;
-//     this.value1 = value1;
-//     this.value2 = value2;
-//     this.value3 = value3;
-//   }
-// }
-
-// // A collection to store our created objects and check for uniqueness
-// const myDataCollection = new Map(); // Using a Map to store objects by their ID
-
-// function createMyDataObject(id, name, value1, value2, value3) {
-//   if (myDataCollection.has(id)) {
-//     console.warn(`Attempted to create object with duplicate ID: "${id}". Returning existing object.`);
-//     return myDataCollection.get(id); // Optionally return the existing object
-//     // Or, you could throw an error:
-//     // throw new Error(`ID "${id}" already exists.`);
-//   }
-
-//   const newObject = new MyDataClass(id, name, value1, value2, value3);
-//   myDataCollection.set(id, newObject); // Store the new object in our collection
-//   return newObject;
-// }
-
-// // --- Demonstrating Uniqueness Check with Factory Function ---
-
-// const dataObj1 = createMyDataObject("ITEM_A", "First Item", 100, 200, "foo");
-// console.log("Created dataObj1:", dataObj1);
-
-// const dataObj2 = createMyDataObject("ITEM_B", "Second Item", 150, 250, "bar");
-// console.log("Created dataObj2:", dataObj2);
-
-// const dataObj3 = createMyDataObject("ITEM_A", "Duplicate Item", 300, 400, "baz"); // Attempting to create with existing ID
-// console.log("Result of dataObj3 creation attempt:", dataObj3); // Will be the same as dataObj1 if returning existing
-
-// console.log("\nAll objects in collection:");
-// myDataCollection.forEach((value, key) => {
-//   console.log(`ID: ${key}, Object:`, value);
-// });
-
-// // Verify if dataObj1 and dataObj3 are the same object reference
-// console.log("dataObj1 === dataObj3:", dataObj1 === dataObj3);
-// --Newcode--onsole.log("\nAll objects in collection:");
-// myDataCollection.forEach((value, key) => {
-//   console.log(`ID: ${key}, Object:`, value);
-// });
-
-// // Verify if dataObj1 and dataObj3 are the same object reference
-// console.log("dataObj1 === dataObj3:", dataObj1 === dataObj3);
-// --Newcode--
